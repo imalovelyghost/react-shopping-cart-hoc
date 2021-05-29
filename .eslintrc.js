@@ -15,7 +15,7 @@ module.exports = {
     "plugin:jsx-a11y/recommended",
     "prettier",
   ],
-  parser: "@babel/eslint-parser",
+  parser: "@babel/eslint-parse",
   parserOptions: {
     ecmaVersion: 12,
     sourceType: "module",
@@ -49,7 +49,12 @@ module.exports = {
     },
   ],
   rules: {
-    "prettier/prettier": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        endOfLine: "auto",
+      },
+    ],
     "react/jsx-filename-extension": "off",
     "import/prefer-default-export": "off",
     "prefer-destructuring": "off",
